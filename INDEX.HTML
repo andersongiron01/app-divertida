@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excusómetro Catracho</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #001219;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .app-container {
+            background: #005f73;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            border: 4px solid #94d2bd;
+        }
+        .pregunta-profe {
+            background: #e9d8a6;
+            color: #333;
+            padding: 15px;
+            border-radius: 15px 15px 15px 0px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            position: relative;
+            box-shadow: 5px 5px 0px #ee9b00;
+        }
+        .pregunta-profe::after {
+            content: "👩‍🏫 Profe dice:";
+            position: absolute;
+            top: -25px;
+            left: 0;
+            font-size: 0.8rem;
+            color: #94d2bd;
+        }
+        button {
+            background-color: #bb3e03;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        button:hover {
+            background-color: #ae2012;
+            transform: scale(1.05);
+        }
+        #resultado {
+            margin-top: 30px;
+            background: #ffffff;
+            color: #001219;
+            padding: 20px;
+            border-radius: 15px 15px 0px 15px;
+            font-size: 1.1rem;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 8px solid #0a9396;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <div class="pregunta-profe">
+            ¿Por qué no me trajo la tarea?
+        </div>
+
+        <button onclick="generar()">Generar excusa catracha 🇭🇳</button>
+
+        <div id="resultado">
+            Presione arriba para responder...
+        </div>
+    </div>
+
+    <script>
+        function generar() {
+            const opciones = [
+                "Profe, es que se fue la luz en el barrio y no pude cargar la compu.",
+                "Fíjese que el internet de Tigo me falló y el archivo quedó cargando en 99%.",
+                "¡Ay profe! Es que mi mamá me mandó a comprar tortillas y me quedé platicando.",
+                "Mire profe, yo la traía en la USB, pero se me cayó en el rapidito.",
+                "Profe, es que hubo una toma en la carretera y no pude llegar al ciber.",
+                "Fíjese que mi hermanito usó el cuaderno para hacer barquitos de papel.",
+                "Profe, yo se la mandé por correo, revise la carpeta de correos no deseados.",
+                "Es que el PDF se me convirtió en un virus y me borró todo el trabajo.",
+                "Profe, ¿y si le traigo unas semitas de yema mañana y me perdona?",
+                "Pucha profe, fíjese que me asaltaron y me quitaron la mochila con la tarea.",
+                "Es que se me arruinó la impresora y en el ciber no tenían tinta negra.",
+                "Profe, yo juraba que hoy era feriado por el día de Lempira.",
+                "Fíjese que el perro me vomitó el cuaderno, ¡de verdad!"
+            ];
+
+            // Selección aleatoria
+            let random = Math.floor(Math.random() * opciones.length);
+            
+            // Mostrar la excusa
+            document.getElementById('resultado').innerText = opciones[random];
+        }
+    </script>
+</body>
+</html>
